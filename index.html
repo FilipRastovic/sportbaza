@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Svi dečiji klubovi, teretane i rekreativni centri u Novom Sadu na jednom mestu. Pronađi svoj sport uz Sport Bazu.">
+    <title>Sport Baza Novi Sad – Pronađi svoj sport</title>
+    <link rel="icon" type="image/png" href="assets/icon-32.png">
+    <link rel="apple-touch-icon" href="assets/icon-180.png">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,"script",
+    "https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init", "1973562894045617");
+    fbq("track", "PageView");
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1973562894045617&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at 50% 0%, #f7f9fb 0%, #eaeef2 60%, #e2e7ec 100%);
+            color: #1a2b4a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            background: #ffffff;
+            padding: 30px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 35, 65, 0.1);
+            border: 1px solid #e6eaef;
+            text-align: center;
+        }
+
+        .logo {
+            display: block;
+            width: 130px;
+            height: auto;
+            margin: 0 auto 14px;
+        }
+
+        .badge {
+            background: rgba(15, 139, 158, 0.08);
+            color: #0f7a8c;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px solid rgba(15, 139, 158, 0.25);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 12px;
+            color: #0b1f3a;
+        }
+
+        p.subtitle {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            color: #475569;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid #d7dee6;
+            background: #f8fafc;
+            color: #0b1f3a;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus, select:focus {
+            border-color: #0f8b9e;
+            box-shadow: 0 0 8px rgba(15, 139, 158, 0.25);
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #0b2545 0%, #0f8b9e 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 4px 20px rgba(15, 139, 158, 0.3);
+            transition: transform 0.1s, opacity 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.95;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .benefit-list {
+            text-align: left;
+            margin: 20px 0;
+            background: #f4f7fa;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #e6eaef;
+            font-size: 0.85rem;
+            color: #334155;
+        }
+
+        .benefit-list li {
+            list-style: none;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .benefit-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .benefit-list li::before {
+            content: "✓";
+            color: #0f8b9e;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .consent-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin: 18px 0 4px;
+            text-align: left;
+        }
+
+        .consent-group input[type="checkbox"] {
+            width: auto;
+            margin-top: 3px;
+            accent-color: #0f8b9e;
+            flex-shrink: 0;
+        }
+
+        .consent-group label {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-weight: 400;
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        .consent-group a {
+            color: #0f7a8c;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .consent-group a:hover {
+            text-decoration: underline;
+        }
+
+        .error-banner {
+            display: none;
+            background: rgba(220, 38, 38, 0.08);
+            border: 1px solid rgba(220, 38, 38, 0.25);
+            color: #b91c1c;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 10px 14px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .error-banner.visible {
+            display: block;
+        }
+
+        .hp-field {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="assets/logo_transparent.png" alt="Sport Baza" class="logo">
+    <span class="badge">Novi Sad 2026</span>
+    <h1>Pronađi idealan sport u svom komšiluku</h1>
+    <p class="subtitle">Svi dečiji klubovi, teretane i rekreativni centri na jednom mestu. Baza se osvežava najnovijim terminima i cenama.</p>
+
+    <ul class="benefit-list">
+        <li>Uporedi cene i raspored treninga</li>
+        <li>Rezerviš prvi besplatan trening</li>
+        <li>Osvoji 20% popusta pri prvoj uplaćenoj članarini</li>
+    </ul>
+
+    <div class="error-banner" id="errorBanner">Molimo popunite sva obavezna polja i prihvatite uslove pre slanja.</div>
+
+    <form action="process-lead.php" method="POST">
+
+        <!-- Honeypot: real users never fill this in -->
+        <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Vaše Ime i Prezime</label>
+            <input type="text" id="name" name="Ime_i_Prezime" placeholder="npr. Marko Marković" required>
+        </div>
+
+        <div class="form-group">
+            <label for="contact">Broj telefona ili WhatsApp/Viber</label>
+            <input type="tel" id="contact" name="Broj_Telefona" placeholder="06X XXX XXXX" required>
+        </div>
+
+        <div class="form-group">
+            <label for="sport">Šta vas najviše zanima?</label>
+            <select id="sport" name="Interesovanje_Sport" required>
+                <option value="" disabled selected>Izaberite kategoriju...</option>
+                <option value="Dečiji sport / Škole sporta">Dečiji sport / Škole sporta</option>
+                <option value="Teretane i Fitnes">Teretane i Fitnes</option>
+                <option value="Padel i Tenis">Padel i Tenis</option>
+                <option value="Vodeni sportovi (SUP/Kajak/Bazeni)">Vodeni sportovi (SUP/Kajak/Bazeni)</option>
+                <option value="Fizioterapija i Oporavak">Fizioterapija i Oporavak</option>
+                <option value="Ostalo">Ostalo</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="kvart">Koji deo grada vam najviše odgovara?</label>
+            <select id="kvart" name="Kvart_Novi_Sad">
+                <option value="Liman">Liman (1, 2, 3, 4)</option>
+                <option value="Novo Naselje / Satelit">Novo Naselje / Satelit</option>
+                <option value="Detelinara">Detelinara</option>
+                <option value="Centar / Grbavica">Centar / Grbavica</option>
+                <option value="SPENS / Sajmište">SPENS / Sajmište</option>
+                <option value="Sremska Kamenica / Petrovaradin">Sremska Kamenica / Petrovaradin</option>
+                <option value="Svi delovi grada">Svi delovi grada</option>
+            </select>
+        </div>
+
+        <div class="consent-group">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">Slažem se da Sport Baza obradi moje podatke radi kontakta, u skladu sa <a href="privacy-policy.html" target="_blank" rel="noopener">Politikom privatnosti</a>.</label>
+        </div>
+
+        <button type="submit">Preuzmi pristup i popust 🚀</button>
+    </form>
+
+    <p class="footer-text">Vaši podaci su 100% sigurni. Bez spama.</p>
+</div>
+
+<script>
+    if (new URLSearchParams(window.location.search).get('error') === '1') {
+        document.getElementById('errorBanner').classList.add('visible');
+    }
+</script>
+
+</body>
+</html>
