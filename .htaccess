@@ -1,4 +1,0 @@
-RedirectMatch 404 /\.git
-<FilesMatch "^\.">
-    Require all denied
-</FilesMatch>

@@ -253,12 +253,16 @@
 
     <div class="error-banner" id="errorBanner">Molimo popunite sva obavezna polja i prihvatite uslove pre slanja.</div>
 
-    <form action="process-lead.php" method="POST">
+    <form action="https://formsubmit.co/igorpajovic86@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Novi Lead - Sport Baza">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" id="nextUrl" value="">
 
         <!-- Honeypot: real users never fill this in -->
         <div class="hp-field" aria-hidden="true">
             <label for="website">Website</label>
-            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            <input type="text" id="website" name="_honey" tabindex="-1" autocomplete="off">
         </div>
 
         <div class="form-group">
@@ -348,6 +352,9 @@
 </div>
 
 <script>
+    // FormSubmit needs an absolute URL to redirect to after submission.
+    document.getElementById('nextUrl').value = new URL('thank-you.html', window.location.href).href;
+
     if (new URLSearchParams(window.location.search).get('error') === '1') {
         document.getElementById('errorBanner').classList.add('visible');
     }
