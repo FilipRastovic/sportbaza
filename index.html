@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Svi dečiji klubovi, teretane i rekreativni centri u Novom Sadu na jednom mestu. Pronađi svoj sport uz Sport Bazu.">
-    <title>Sport Baza Novi Sad – Pronađi svoj sport</title>
+    <meta name="description" content="Svi sportovi, klubovi i treneri u Novom Sadu na jednom mestu. Pronađi svoj sport uz Sport Bazu.">
+    <title>Sport Baza | Novi Sad</title>
     <link rel="icon" type="image/png" href="assets/icon-32.png">
     <link rel="apple-touch-icon" href="assets/icon-180.png">
 
@@ -26,339 +26,213 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
 
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes luxuryFadeIn { 0% { opacity: 0; transform: scale(0.96) translateY(25px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
+        @keyframes slowIconPulse { 0% { box-shadow: 0 0 0 0 rgba(0, 168, 181, 0.3); } 70% { box-shadow: 0 0 0 20px rgba(0, 168, 181, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 168, 181, 0); } }
+        @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 
-        body {
-            background: radial-gradient(circle at 50% 0%, #f7f9fb 0%, #eaeef2 60%, #e2e7ec 100%);
-            color: #1a2b4a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 480px;
-            width: 100%;
-            background: #ffffff;
-            padding: 30px 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(15, 35, 65, 0.1);
-            border: 1px solid #e6eaef;
-            text-align: center;
-        }
-
-        .logo {
-            display: block;
-            width: 130px;
-            height: auto;
-            margin: 0 auto 14px;
-        }
-
-        .badge {
-            background: rgba(15, 139, 158, 0.08);
-            color: #0f7a8c;
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 6px 14px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-bottom: 15px;
-            border: 1px solid rgba(15, 139, 158, 0.25);
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            line-height: 1.25;
-            margin-bottom: 12px;
-            color: #0b1f3a;
-        }
-
-        p.subtitle {
-            color: #64748b;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 25px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        label {
-            display: block;
-            font-size: 0.85rem;
-            color: #475569;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 14px;
-            border-radius: 10px;
-            border: 1px solid #d7dee6;
-            background: #f8fafc;
-            color: #0b1f3a;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        input:focus, select:focus {
-            border-color: #0f8b9e;
-            box-shadow: 0 0 8px rgba(15, 139, 158, 0.25);
-        }
-
-        button {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #0b2545 0%, #0f8b9e 100%);
-            color: #ffffff;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 800;
-            cursor: pointer;
-            margin-top: 10px;
-            box-shadow: 0 4px 20px rgba(15, 139, 158, 0.3);
-            transition: transform 0.1s, opacity 0.2s;
-        }
-
-        button:hover {
-            opacity: 0.95;
-        }
-
-        button:active {
-            transform: scale(0.98);
-        }
-
-        .footer-text {
-            margin-top: 20px;
-            font-size: 0.8rem;
-            color: #94a3b8;
-        }
-
-        .benefit-list {
-            text-align: left;
-            margin: 20px 0;
-            background: #f4f7fa;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #e6eaef;
-            font-size: 0.85rem;
-            color: #334155;
-        }
-
-        .benefit-list li {
-            list-style: none;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-
-        .benefit-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .benefit-list li::before {
-            content: "✓";
-            color: #0f8b9e;
-            font-weight: bold;
-            margin-right: 8px;
-        }
-
-        .consent-group {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            margin: 18px 0 4px;
-            text-align: left;
-        }
-
-        .consent-group input[type="checkbox"] {
-            width: auto;
-            margin-top: 3px;
-            accent-color: #0f8b9e;
-            flex-shrink: 0;
-        }
-
-        .consent-group label {
-            font-size: 0.78rem;
-            color: #64748b;
-            font-weight: 400;
-            margin-bottom: 0;
-            line-height: 1.4;
-        }
-
-        .consent-group a {
-            color: #0f7a8c;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .consent-group a:hover {
-            text-decoration: underline;
-        }
-
-        .error-banner {
-            display: none;
-            background: rgba(220, 38, 38, 0.08);
-            border: 1px solid rgba(220, 38, 38, 0.25);
-            color: #b91c1c;
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 10px 14px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .error-banner.visible {
-            display: block;
-        }
-
-        .hp-field {
-            position: absolute;
-            left: -9999px;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
+        .animate-slide { animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .animate-luxury-success { animation: luxuryFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .success-icon-pulse-slow { animation: slowIconPulse 2.8s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+        .shimmer-effect { position: relative; overflow: hidden; }
+        .shimmer-effect::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent); animation: shimmer 3s infinite; }
+        .form-transition { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .form-card-glow { transition: box-shadow 0.4s ease, border-color 0.4s ease; }
+        .form-card-glow:focus-within { box-shadow: 0 0 45px rgba(56, 189, 248, 0.22), 0 0 20px rgba(2, 132, 199, 0.12); border-color: rgba(56, 189, 248, 0.5); }
+        .role-label { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .role-label:has(input[type="radio"]:checked) { border-color: #38bdf8 !important; background-color: rgba(56, 189, 248, 0.15) !important; box-shadow: 0 4px 20px rgba(56, 189, 248, 0.1); }
+        .role-label:has(input[type="radio"]:checked) span { color: #38bdf8; font-weight: 700; }
+        input[type="radio"] { accent-color: #38bdf8; width: 16px; height: 16px; cursor: pointer; }
+        input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus { -webkit-box-shadow: 0 0 0 1000px #030712 inset !important; -webkit-text-fill-color: #ffffff !important; caret-color: #ffffff !important; }
     </style>
 </head>
-<body>
+<body class="bg-[#020409] text-slate-100 font-sans antialiased selection:bg-[#0284c7] selection:text-white min-h-screen flex flex-col justify-between relative overflow-x-hidden">
 
-<div class="container">
-    <img src="assets/logo_transparent.png" alt="Sport Baza" class="logo">
-    <span class="badge">Novi Sad 2026</span>
-    <h1>Pronađi idealan sport u svom komšiluku</h1>
-    <p class="subtitle">Svi dečiji klubovi, teretane i rekreativni centri na jednom mestu. Baza se osvežava najnovijim terminima i cenama.</p>
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,_rgba(56,189,248,0.14)_0%,_rgba(2,132,199,0.05)_45%,_transparent_75%)] rounded-full blur-[70px] pointer-events-none"></div>
+    <div class="absolute top-20 left-10 w-[500px] h-[500px] bg-[radial-gradient(circle,_rgba(0,168,181,0.1)_0%,_transparent_70%)] rounded-full blur-[90px] pointer-events-none"></div>
 
-    <ul class="benefit-list">
-        <li>Uporedi cene i raspored treninga</li>
-        <li>Rezerviš prvi besplatan trening</li>
-        <li>Osvoji 20% popusta pri prvoj uplaćenoj članarini</li>
-    </ul>
-
-    <div class="error-banner" id="errorBanner">Molimo popunite sva obavezna polja i prihvatite uslove pre slanja.</div>
-
-    <form action="https://formsubmit.co/igorpajovic86@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Novi Lead - Sport Baza">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" id="nextUrl" value="">
-
-        <!-- Honeypot: real users never fill this in -->
-        <div class="hp-field" aria-hidden="true">
-            <label for="website">Website</label>
-            <input type="text" id="website" name="_honey" tabindex="-1" autocomplete="off">
+    <header class="w-full border-b border-[#0d1833]/70 bg-[#020409]/85 backdrop-blur-xl relative z-10">
+        <div class="max-w-5xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 lg:h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 lg:w-12 lg:h-12 rounded-2xl bg-white flex items-center justify-center p-1 shadow-lg shadow-[#00a8b5]/10">
+                    <img src="assets/logo_mark.png" alt="Sport Baza" class="w-full h-full object-contain">
+                </div>
+                <div>
+                    <div class="text-lg lg:text-xl font-black tracking-wider text-white leading-none mb-0.5">
+                        SPORT <span class="text-[#38bdf8]">BAZA</span>
+                    </div>
+                    <div class="text-[10px] lg:text-[11px] tracking-widest text-[#38bdf8]/80 uppercase font-semibold">
+                        Pronađi svoj sport
+                    </div>
+                </div>
+            </div>
+            <div class="text-xs sm:text-sm font-semibold text-[#38bdf8] bg-[#030a1c]/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#38bdf8]/20 tracking-wide shadow-inner">
+                Novi Sad 📍
+            </div>
         </div>
+    </header>
 
-        <div class="form-group">
-            <label for="name">Vaše Ime i Prezime</label>
-            <input type="text" id="name" name="Ime_i_Prezime" placeholder="npr. Marko Marković" required>
+    <main class="w-full max-w-5xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-3 lg:py-8 flex flex-col justify-center my-auto relative z-10">
+        <div class="grid lg:grid-cols-12 gap-5 lg:gap-12 items-center">
+
+            <div class="lg:col-span-7 space-y-3 lg:space-y-5 animate-slide">
+                <h2 class="text-[11px] sm:text-xs font-bold text-[#38bdf8] tracking-[0.25em] uppercase">
+                    Svi sportovi. Svi klubovi. Jedno mesto.
+                </h2>
+                <h1 class="text-2xl sm:text-3xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                    Pronađi sport koji ti odgovara.
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#38bdf8] via-[#0284c7] to-[#0d9488]">Klub. Lokacija. Termin.</span>
+                    Sve na jednom mestu.
+                </h1>
+
+                <div class="p-3.5 sm:p-5 rounded-2xl bg-[#030815]/75 border border-[#0e1c3c] backdrop-blur-xl space-y-3 shadow-2xl">
+                    <div class="flex items-start gap-3 text-sm sm:text-base text-slate-200">
+                        <span class="w-5 h-5 rounded-full bg-[#0284c7]/15 text-[#38bdf8] flex items-center justify-center shrink-0 mt-0.5 border border-[#38bdf8]/30">
+                            <svg class="w-3 h-3 stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span><strong>Za vežbače:</strong> Izaberi sport, lokaciju, istraži termine i uslove, ostvari popust i isprobaj trening besplatno.</span>
+                    </div>
+                    <div class="flex items-start gap-3 text-sm sm:text-base text-slate-200">
+                        <span class="w-5 h-5 rounded-full bg-[#0284c7]/15 text-[#38bdf8] flex items-center justify-center shrink-0 mt-0.5 border border-[#0284c7]/30">
+                            <svg class="w-3 h-3 stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span><strong>Za klubove:</strong> Privuci nove članove i popuni svoje termine.</span>
+                    </div>
+                    <div class="flex items-start gap-3 text-sm sm:text-base text-slate-200">
+                        <span class="w-5 h-5 rounded-full bg-[#0284c7]/15 text-[#38bdf8] flex items-center justify-center shrink-0 mt-0.5 border border-[#0284c7]/30">
+                            <svg class="w-3 h-3 stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span><strong>Za trenere:</strong> Poveži se sa ljudima koji traže tvoj sport.</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="relative rounded-2xl bg-[#030815]/80 border border-[#0e1c3c] p-3.5 sm:p-4 shadow-lg backdrop-blur-xl">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 relative z-10">
+                            <span class="text-xs sm:text-sm font-bold tracking-widest text-[#38bdf8] uppercase">
+                                Pronađi. Rezerviši. Treniraj.
+                            </span>
+                            <span class="text-xs sm:text-sm font-medium text-slate-300 tracking-wide">
+                                Zajedno gradimo najveću sportsku mrežu Novog Sada.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 animate-slide" style="animation-delay: 0.1s;">
+                <div id="target-form-card" class="relative rounded-2xl lg:rounded-3xl shadow-2xl overflow-hidden border border-[#0e1c3c] bg-[#030714]/85 backdrop-blur-2xl form-card-glow">
+                    <div class="relative z-10 p-4 sm:p-6 lg:p-8">
+                        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-64 h-32 bg-[#0284c7]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                        <div id="form-container" class="form-transition space-y-3.5">
+                            <h3 class="text-base sm:text-lg font-bold text-white mb-0.5">Sport Baza uskoro stiže. Budi među prvima.</h3>
+                            <p class="text-sm sm:text-base text-slate-300 mb-3">Besplatan pristup i posebne pogodnosti pri lansiranju.</p>
+
+                            <form class="space-y-3.5" onsubmit="handleFormSubmit(event)">
+                                <!-- Honeypot: real users never fill this in -->
+                                <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;">
+
+                                <div>
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <label class="role-label cursor-pointer border border-[#0e1c3c] bg-[#040a1b]/85 backdrop-blur-md hover:border-[#38bdf8] hover:bg-[#07132e]/90 rounded-xl p-2 text-center text-xs sm:text-sm font-medium text-slate-100 transition-all flex flex-col items-center justify-center gap-1.5 shadow-sm">
+                                            <input type="radio" name="tip_korisnika" value="vezbac" required>
+                                            <span>Vežbač</span>
+                                        </label>
+                                        <label class="role-label cursor-pointer border border-[#0e1c3c] bg-[#040a1b]/85 backdrop-blur-md hover:border-[#38bdf8] hover:bg-[#07132e]/90 rounded-xl p-2 text-center text-xs sm:text-sm font-medium text-slate-100 transition-all flex flex-col items-center justify-center gap-1.5 shadow-sm">
+                                            <input type="radio" name="tip_korisnika" value="klub">
+                                            <span>Klub</span>
+                                        </label>
+                                        <label class="role-label cursor-pointer border border-[#0e1c3c] bg-[#040a1b]/85 backdrop-blur-md hover:border-[#38bdf8] hover:bg-[#07132e]/90 rounded-xl p-2 text-center text-xs sm:text-sm font-medium text-slate-100 transition-all flex flex-col items-center justify-center gap-1.5 shadow-sm">
+                                            <input type="radio" name="tip_korisnika" value="trener">
+                                            <span>Trener</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <input type="email" id="email-input" name="email" placeholder="Unesi svoju email adresu..." required class="w-full bg-[#040a1b]/85 backdrop-blur-md border border-[#0e1c3c] rounded-xl px-4 py-3.5 text-white placeholder-slate-400 text-base focus:outline-none focus:border-[#38bdf8] focus:ring-1 focus:ring-[#38bdf8]/40 transition shadow-inner">
+                                </div>
+
+                                <div>
+                                    <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-[#0f2852] via-[#0284c7] to-[#00a8b5] hover:brightness-110 active:scale-[0.98] text-white font-black px-4 py-3.5 rounded-xl text-base sm:text-lg transition-all shadow-xl shadow-[#020409]/90 flex items-center justify-center tracking-wide [text-shadow:_0_1px_3px_rgb(0_0_0_/_70%)] border-0 relative z-10 shimmer-effect disabled:opacity-60">
+                                        Obezbedi rani pristup
+                                    </button>
+                                    <p id="form-error" class="hidden text-sm text-red-400 text-center mt-3">Došlo je do greške. Molimo pokušajte ponovo.</p>
+                                    <div class="flex items-center justify-center gap-2 text-xs sm:text-sm text-slate-100 mt-4 font-medium drop-shadow-sm">
+                                        <span class="w-4 h-4 rounded-full bg-[#0284c7]/20 text-[#38bdf8] flex items-center justify-center shrink-0 border border-[#0284c7]/30">
+                                            <svg class="w-2.5 h-2.5 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                        </span>
+                                        <span>Rani pristup i registracija su <strong class="text-[#38bdf8] font-bold">potpuno besplatni</strong>.</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div id="success-message" class="hidden form-transition text-center py-6 sm:py-8 space-y-4 animate-luxury-success relative z-10">
+                            <div class="w-16 h-16 bg-gradient-to-tr from-[#0f2852] via-[#0284c7] to-[#00a8b5] text-white rounded-2xl flex items-center justify-center mx-auto shadow-2xl shadow-[#0284c7]/30 ring-4 ring-[#0284c7]/15 success-icon-pulse-slow">
+                                <svg class="w-9 h-9 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <div class="space-y-1.5">
+                                <h4 class="text-2xl font-black text-white tracking-wide">Uspešna prijava!</h4>
+                                <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">Proveri svoj mejl za potvrdu prijave.</p>
+                            </div>
+                            <div class="pt-1">
+                                <p class="text-sm sm:text-base font-semibold text-[#38bdf8] tracking-wide">Pratimo se uskoro!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </main>
 
-        <div class="form-group">
-            <label for="contact">Broj telefona ili WhatsApp/Viber</label>
-            <input type="tel" id="contact" name="Broj_Telefona" placeholder="06X XXX XXXX" required>
-        </div>
+    <footer class="w-full border-t border-[#0d1833]/70 py-3 lg:py-5 text-center text-xs sm:text-sm text-slate-400 relative z-10 bg-[#020409]/85 backdrop-blur-xl">
+        <p>© 2026 Sport Baza Novi Sad. Sva prava zadržana. · <a href="privacy-policy.html" class="hover:text-[#38bdf8] underline-offset-2 hover:underline">Politika privatnosti</a></p>
+    </footer>
 
-        <div class="form-group">
-            <label for="sport">Šta vas najviše zanima?</label>
-            <select id="sport" name="Interesovanje_Sport" required>
-                <option value="" disabled selected>Izaberite kategoriju...</option>
-                <option value="Dečiji sport / Škole sporta">Dečiji sport / Škole sporta</option>
-                <option value="Teretane i Fitnes">Teretane i Fitnes</option>
-                <option value="Padel i Tenis">Padel i Tenis</option>
-                <option value="Vodeni sportovi (SUP/Kajak/Bazeni)">Vodeni sportovi (SUP/Kajak/Bazeni)</option>
-                <option value="Fizioterapija i Oporavak">Fizioterapija i Oporavak</option>
-                <option value="Fudbal">Fudbal</option>
-                <option value="Košarka">Košarka</option>
-                <option value="Tenis">Tenis</option>
-                <option value="Odbojka">Odbojka</option>
-                <option value="Stoni tenis">Stoni tenis</option>
-                <option value="Bejzbol">Bejzbol</option>
-                <option value="Ragbi">Ragbi</option>
-                <option value="Golf">Golf</option>
-                <option value="Borilački sportovi">Borilački sportovi (Boks, MMA)</option>
-                <option value="Ostalo">Ostalo</option>
-            </select>
-        </div>
+    <script>
+        const emailInput = document.getElementById('email-input');
+        const formCard = document.getElementById('target-form-card');
 
-        <div class="form-group">
-            <label for="kvart">Koji deo grada vam najviše odgovara?</label>
-            <select id="kvart" name="Kvart_Novi_Sad">
-                <option value="Centar">Centar</option>
-                <option value="Liman">Liman (1, 2, 3, 4)</option>
-                <option value="Grbavica">Grbavica</option>
-                <option value="Podbara">Podbara</option>
-                <option value="Rotkvarija">Rotkvarija (Žitni trg)</option>
-                <option value="Salajka">Salajka (Slavija)</option>
-                <option value="Adamovićevo naselje">Adamovićevo naselje</option>
-                <option value="Novo Naselje">Novo Naselje</option>
-                <option value="Satelit">Satelit</option>
-                <option value="Telep">Telep</option>
-                <option value="SPENS">SPENS</option>
-                <option value="Sajmište">Sajmište</option>
-                <option value="Detelinara">Detelinara (Stara i Nova)</option>
-                <option value="Avijatičarsko naselje">Avijatičarsko naselje (Avijacija)</option>
-                <option value="Klisa">Klisa</option>
-                <option value="Sremska Kamenica">Sremska Kamenica</option>
-                <option value="Petrovaradin">Petrovaradin</option>
-                <option value="Futog">Futog</option>
-                <option value="Veternik">Veternik</option>
-                <option value="Begeč">Begeč</option>
-                <option value="Rumenka">Rumenka</option>
-                <option value="Kisač">Kisač</option>
-                <option value="Stepanovićevo">Stepanovićevo</option>
-                <option value="Čenej">Čenej</option>
-                <option value="Kovilj">Kovilj</option>
-                <option value="Ledinci">Ledinci (Novi i Stari)</option>
-                <option value="Bukovac">Bukovac</option>
-                <option value="Sremski Karlovci">Sremski Karlovci</option>
-                <option value="Temerin">Temerin</option>
-                <option value="Bački Jarak">Bački Jarak</option>
-                <option value="Bački Petrovac">Bački Petrovac</option>
-                <option value="Žabalj">Žabalj</option>
-                <option value="Gospođinci">Gospođinci</option>
-                <option value="Irig">Irig (Iriški venac / Vrdnik)</option>
-                <option value="Beočin">Beočin (Čerević, Banoštor)</option>
-                <option value="Inđija">Inđija (Čortanovci, Beška, Maradik)</option>
-                <option value="Svi delovi grada">Svi delovi grada i okoline</option>
-            </select>
-        </div>
+        emailInput.addEventListener('focus', () => {
+            setTimeout(() => { formCard.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 300);
+        });
 
-        <div class="consent-group">
-            <input type="checkbox" id="consent" name="consent" required>
-            <label for="consent">Slažem se da Sport Baza obradi moje podatke radi kontakta, u skladu sa <a href="privacy-policy.html" target="_blank" rel="noopener">Politikom privatnosti</a>.</label>
-        </div>
+        // Leads are delivered by email via FormSubmit.
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const button = document.getElementById('submit-btn');
+            const error = document.getElementById('form-error');
+            const data = Object.fromEntries(new FormData(form));
 
-        <button type="submit">Preuzmi pristup i popust 🚀</button>
-    </form>
+            button.disabled = true;
+            error.classList.add('hidden');
 
-    <p class="footer-text">Vaši podaci su 100% sigurni. Bez spama.</p>
-</div>
+            try {
+                const res = await fetch('https://formsubmit.co/ajax/igorpajovic86@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        ...data,
+                        _subject: 'Novi Lead - Sport Baza (' + data.tip_korisnika + ')',
+                        _template: 'table'
+                    })
+                });
+                if (!res.ok) throw new Error(res.status);
 
-<script>
-    // FormSubmit needs an absolute URL to redirect to after submission.
-    document.getElementById('nextUrl').value = new URL('thank-you.html', window.location.href).href;
-
-    if (new URLSearchParams(window.location.search).get('error') === '1') {
-        document.getElementById('errorBanner').classList.add('visible');
-    }
-</script>
-
+                if (window.fbq) fbq('track', 'Lead');
+                document.getElementById('form-container').style.display = 'none';
+                document.getElementById('success-message').classList.remove('hidden');
+            } catch (e) {
+                error.classList.remove('hidden');
+                button.disabled = false;
+            }
+        }
+    </script>
 </body>
 </html>
